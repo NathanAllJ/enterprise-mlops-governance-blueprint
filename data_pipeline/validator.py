@@ -1,4 +1,5 @@
 # data_pipeline/validator.py
+import numpy as np
 import pandas as pd
 from typing import Dict, Any
 
@@ -39,5 +40,24 @@ class DataValidator:
         df = df[df['monthly_charges'] >= 0.0]
         
         print("[DOMAIN GUARDRAILS]: Complete. Out-of-bounds metrics successfully pruned.")
+        return df
+
+    def inspect_z_scores(self, df: pd.DataFrame, column: str, threshold: float = 3.5) -> pd.DataFrame:
+        """Flags statistical anomalies engineered to manipulate or poison the system."""
+        if df.empty or column not in df.columns:
+            return df
+            
+        if df[column].std() == 0:
+            return df
+            
+        # Calculate statistical distance from the group mean
+        z_scores = np.abs((df[column] - df[column].mean()) / df[column].std())
+        anomalies = df[z_scores > threshold]
+        
+        if not anomalies.empty:
+            print(f"[SECURITY ALERT]: Flagged potential adversarial outliers in column '{column}':\n", anomalies)
+            # Purge the anomalous data from the training stream to defend the model
+            df = df[z_scores <= threshold]
+            
         return df
 
