@@ -56,6 +56,6 @@ async def predict_async_endpoint(payload: InferencePayload, background_tasks: Ba
     
     return {
         "status": "QUEUED", 
-        "message": "Inference task offloaded to non-blocking application background workers successfully.",
+        "message": "Inference task off-loaded to non-blocking application background workers successfully.",
         "circuit_state": gateway.circuit_breaker.state
     }
