@@ -16,7 +16,7 @@ Subject to the terms and conditions of this Agreement, You hereby grant to the P
 If You are an employee making a Contribution on behalf of a corporation, you represent that you are legally authorized by your employer to bind the corporation to these terms, or that your employer has issued a waiver of rights for the Contribution.
 
 ---
-### ✍️ How to Sign
+### How to Sign
 This project uses an automated CLA manager. To sign this agreement, please reply directly to the automated pull request comment in GitHub with:
 `I have read the CLA and I hereby sign it.`
 
