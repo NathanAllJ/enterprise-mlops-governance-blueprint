@@ -1,6 +1,8 @@
 # Hardened Enterprise MLOps Platform (Production Blueprint)
 
-A production-grade, compliance-first machine learning framework designed for highly regulated corporate environments (HIPAA, GDPR, SOC2). This repository demonstrates a decoupled, self-healing MLOps architecture that wraps statistical modeling within strict enterprise software engineering guardrails.
+**This repository is NOT a Proof of Concept (PoC). This is a functional MLOps Production Architecture Blueprint.** 
+
+A Proof of Concept evaluates whether a machine learning model *can* make a prediction. This blueprint demonstrates *how* that model is safely governed, containerized, audited, and hardened to survive inside a zero-trust enterprise ecosystem. The focus of this codebase is the foundational software architecture, compliance guardrails, and self-healing infrastructure patterns wrapper surrounding the core data science tier.
 
 ---
 
