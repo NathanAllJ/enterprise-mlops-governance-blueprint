@@ -14,7 +14,7 @@ try:
     registry = EnterpriseModelRegistry()
     production_model = registry.load_latest_model(version="1.0.0")
 except Exception:
-    print("⚠️ Warning: Model artifact v1.0.0 not preloaded. Execute train.py first.")
+    print("Warning: Model artifact v1.0.0 not preloaded. Execute train.py first.")
     production_model = None
 
 @app.get("/health", tags=["Infrastructure"])
