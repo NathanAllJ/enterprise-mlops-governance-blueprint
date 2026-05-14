@@ -2,7 +2,7 @@
 
 """
 Enterprise Data Pipeline Module
-Exposes core data validation, anonymization, and ingestion orchestration managers.
+Exposes core data validation, adversarial screening, anonymization, and ingestion orchestration managers.
 """
 
 from .validator import DataValidator
@@ -16,5 +16,4 @@ __all__ = [
     "EnterprisePipelineManager"
 ]
 
-__version__ = "1.0.0"
-
+__version__ = "1.1.0"
