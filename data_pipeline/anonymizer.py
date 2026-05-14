@@ -29,6 +29,6 @@ class DataAnonymizer:
                 # Rename the column visually to declare compliance state
                 df_cleaned = df_cleaned.rename(columns={column: f"anonymized_{column}"})
                 
-        print(f"🧼 [PRIVACY ENGINE]: Successfully anonymized restricted matrices: {self.restricted_fields}")
+        print(f"[PRIVACY ENGINE]: Successfully anonymized restricted matrices: {self.restricted_fields}")
         return df_cleaned
 
