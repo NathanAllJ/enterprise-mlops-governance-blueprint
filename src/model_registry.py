@@ -32,13 +32,13 @@ class EnterpriseModelRegistry:
         with open(meta_path, 'w') as f:
             json.dump(metadata, f, indent=2)
             
-        print(f"📦 [MODEL REGISTRY]: Model v{version} and compliance logs saved to {self.root}")
+        print(f"[MODEL REGISTRY]: Model v{version} and compliance logs saved to {self.root}")
         return model_path
 
     def load_latest_model(self, version: str):
         """Loads a verified model artifact from storage."""
         model_path = os.path.join(self.root, f"model_v{version}.pkl")
         if not os.path.exists(model_path):
-            raise FileNotFoundError(f"❌ Requested model version {version} not found in registry.")
+            raise FileNotFoundError(f"Requested model version {version} not found in registry.")
         return joblib.load(model_path)
 
