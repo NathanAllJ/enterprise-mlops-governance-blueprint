@@ -1,1 +1,60 @@
+# ==============================================================================
+# 🏢 ENTERPRISE SECURITY GUARDRAILS: DATA & CREDENTIAL LEAK PROTECTION
+# ==============================================================================
+
+# 1. Block Local Application & Environment Secrets
+.env
+.env.local
+.env.*
+*.secret
+*.pem
+*.key
+certs/
+
+# 2. Block Large Datasets, File Drops, & Databases
+*.csv
+*.parquet
+*.jsonl
+*.tsv
+*.xlsx
+*.sql
+*.sqlite
+data/
+raw_data/
+!legal/DATA_PROVENANCE_LOG.csv # EXCEPTION: Explicitly allow the metadata tracking log
+
+# 3. Block Heavy Machine Learning Binaries & Serialized Weights
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.pth
+*.onnx
+*.pb
+models/
+artifacts/
+
+# 4. Standard Python Operating System Caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# 5. Local Virtual Environments & Dependency Trees
+venv/
+.venv/
+env/
+ENV/
+dist/
+build/
+*.egg-info/
+
+# 6. Operating System Level Files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
 
