@@ -18,7 +18,7 @@ class EnterprisePipelineManager:
         self.provenance_log_path = "legal/DATA_PROVENANCE_LOG.csv"
 
     def process_incoming_batch(self, raw_df: pd.DataFrame, dataset_id: str, source_uri: str) -> pd.DataFrame:
-        print(f"\n🚀 Processing Ingest Run: {dataset_id}")
+        print(f"\n Processing Ingest Run: {dataset_id}")
         
         # Step 1: Structural Schema Assertions
         self.validator.validate_schema(raw_df)
@@ -44,7 +44,7 @@ class EnterprisePipelineManager:
         with open(self.provenance_log_path, mode='a', newline='') as f:
             writer = csv.writer(f)
             writer.writerow(log_entry)
-        print(f"🔒 [PROVENANCE SECURED]: Tracking hash generated inside DATA_PROVENANCE_LOG.csv")
+        print(f"[PROVENANCE SECURED]: Tracking hash generated inside DATA_PROVENANCE_LOG.csv")
 
 # Local Mock Simulation Block for verification
 if __name__ == "__main__":
