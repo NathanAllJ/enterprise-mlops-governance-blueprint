@@ -47,12 +47,12 @@ def run_production_training_loop():
     print(f"📊 Model Evaluation F1: {mock_metrics['f1_score']} (Threshold Minimum: {min_f1})")
     
     if mock_metrics["f1_score"] < min_f1:
-        raise ValueError("❌ Model performance failed to cross corporate governance thresholds. Aborting registration.")
+        raise ValueError("Model performance failed to cross corporate governance thresholds. Aborting registration.")
         
     # 5. Push Validated Artifact to Registry
     registry = EnterpriseModelRegistry()
     registry.save_model_artifact(model, metrics=mock_metrics, version="1.0.0")
-    print("🏆 [TRAINING PIPELINE COMPLETE]: Model safely compiled.")
+    print("[TRAINING PIPELINE COMPLETE]: Model safely compiled.")
 
 if __name__ == "__main__":
     run_production_training_loop()
